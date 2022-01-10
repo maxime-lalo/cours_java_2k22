@@ -1,21 +1,34 @@
 package Classes;
-public class Movie{
-    public String title;
-    public int year;
-    public int episodeNumber;
-    public float cost;
-    public float recipe;
 
-    public Movie(String title, int year, int episodeNumber, float cost, float recipe){
-        setTitle(title);
-        setYear(year);
-        setEpisodeNumber(episodeNumber);
-        setCost(cost);
-        setRecipe(recipe);
-    }
+import java.util.Collection;
+
+public class Movie{
+    private String title;
+	private int year;
+	private int episodeNumber;
+	private float cost;
+	private float recipe;
+	private Collection<Actor> actors;
+
+	public Movie(String title, int year, int episodeNumber, float cost, float recipe) {
+		this.title = title;
+		this.year = year;
+		this.episodeNumber = episodeNumber;
+		this.cost = cost;
+		this.recipe = recipe;
+	}
+
+	public Movie(String title, int year, int episodeNumber, float cost, float recipe, Collection<Actor> actors) {
+		this.title = title;
+		this.year = year;
+		this.episodeNumber = episodeNumber;
+		this.cost = cost;
+		this.recipe = recipe;
+		this.actors = actors;
+	}
 
 	public String getTitle() {
-		return this.title;
+		return title;
 	}
 
 	public void setTitle(String title) {
@@ -23,7 +36,7 @@ public class Movie{
 	}
 
 	public int getYear() {
-		return this.year;
+		return year;
 	}
 
 	public void setYear(int year) {
@@ -31,7 +44,7 @@ public class Movie{
 	}
 
 	public int getEpisodeNumber() {
-		return this.episodeNumber;
+		return episodeNumber;
 	}
 
 	public void setEpisodeNumber(int episodeNumber) {
@@ -39,7 +52,7 @@ public class Movie{
 	}
 
 	public float getCost() {
-		return this.cost;
+		return cost;
 	}
 
 	public void setCost(float cost) {
@@ -47,11 +60,19 @@ public class Movie{
 	}
 
 	public float getRecipe() {
-		return this.recipe;
+		return recipe;
 	}
 
 	public void setRecipe(float recipe) {
 		this.recipe = recipe;
+	}
+
+	public Collection<Actor> getActors() {
+		return actors;
+	}
+
+	public void setActors(Collection<Actor> actors) {
+		this.actors = actors;
 	}
 
 	@Override
@@ -62,6 +83,7 @@ public class Movie{
 				", episodeNumber=" + episodeNumber +
 				", cost=" + cost +
 				", recipe=" + recipe +
+				", actors=" + actors +
 				'}';
 	}
 }
