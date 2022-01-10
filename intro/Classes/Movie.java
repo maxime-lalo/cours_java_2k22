@@ -1,3 +1,4 @@
+package Classes;
 public class Movie{
     public String title;
     public int year;
@@ -5,7 +6,7 @@ public class Movie{
     public float cost;
     public float recipe;
 
-    public Acteur(String title, int year, int episodeNumber, float cost, float recipe){
+    public Movie(String title, int year, int episodeNumber, float cost, float recipe){
         setTitle(title);
         setYear(year);
         setEpisodeNumber(episodeNumber);
@@ -53,9 +54,14 @@ public class Movie{
 		this.recipe = recipe;
 	}
 
-	
-    public String toString() {
-        return "Movie | Title : " + this.title + ", Year : " + this.year + ", Episode number : " + this.episodeNumber + ", Cost : " + this.cost + ", Recipe : " + this.recipe; 
-    }
-
+	@Override
+	public String toString() {
+		return "Movie{" +
+				"title='" + title + '\'' +
+				", year=" + year +
+				", episodeNumber=" + episodeNumber +
+				", cost=" + cost +
+				", recipe=" + recipe +
+				'}';
+	}
 }

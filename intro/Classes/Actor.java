@@ -1,8 +1,9 @@
+package Classes;
 public class Actor{
     public String lastName;
     public String firstName;
 
-    public Movie(String lastName, String firstName){
+    public Actor(String lastName, String firstName){
         setLastName(lastName);
         setFirstName(firstName);
     }
@@ -23,7 +24,11 @@ public class Actor{
 		this.firstName = firstName;
 	}
 
-    public String toString() {
-        return "Actor | Last name : " + this.lastName + ", First name : " + this.firstName; 
-    }
+	@Override
+	public String toString() {
+		return "Actor{" +
+				"lastName='" + lastName + '\'' +
+				", firstName='" + firstName + '\'' +
+				'}';
+	}
 }
