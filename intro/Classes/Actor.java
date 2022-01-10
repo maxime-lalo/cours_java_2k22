@@ -1,5 +1,6 @@
 package Classes;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class Actor{
@@ -7,6 +8,12 @@ public class Actor{
     private String firstName;
 	private Collection<Character> characters;
 
+	public Actor(){
+		this.lastName = "";
+		this.firstName = "";
+		this.characters = new ArrayList<Character>;
+	}
+	
 	public Actor(String lastName, String firstName, Collection<Character> characters) {
 		this.lastName = lastName;
 		this.firstName = firstName;

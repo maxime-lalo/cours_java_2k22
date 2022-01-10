@@ -9,6 +9,11 @@ public class Character {
         this.firstName = firstName;
     }
 
+    public Character(){
+        this.lastName = "";
+        this.firstName = "";
+    }
+
     public String getLastName() {
         return lastName;
     }

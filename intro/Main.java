@@ -62,6 +62,7 @@ public class Main{
         movies.add(movie1);
         movies.add(movie2);
         movies.add(movie3);
+
         printAll(movies);
     }
 }

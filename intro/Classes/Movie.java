@@ -1,6 +1,8 @@
 package Classes;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Movie{
     private String title;
@@ -9,6 +11,11 @@ public class Movie{
 	private float cost;
 	private float recipe;
 	private Collection<Actor> actors;
+
+	public Movie(){
+		this.title = "";
+		this.actors = new ArrayList<Actor>();
+	}
 
 	public Movie(String title, int year, int episodeNumber, float cost, float recipe) {
 		this.title = title;
@@ -75,6 +82,25 @@ public class Movie{
 		this.actors = actors;
 	}
 
+	public int nbActors(){
+		return this.actors.size();
+	}
+
+	public int nbCharacters(){
+		AtomicInteger total = new AtomicInteger();
+		this.actors.forEach((actor) -> {
+			total.addAndGet(actor.nbCharacters());
+		});
+		return total.get();
+	}
+
+	public float getBenefits(){
+		return this.recipe - this.cost;
+	}
+
+	public boolean isBefore(int year){
+		return (this.year < year);
+	}
 	@Override
 	public String toString() {
 		return "Movie{" +
