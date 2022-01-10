@@ -1,13 +1,15 @@
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Scanner;
 import Classes.Movie;
 import Classes.Character;
 
 public class Main{
 
-    public static void printAll(Movie[] all){
-        for(int i = 0; i < all.length; i++ ){
-            System.out.println(all[i]);
-        }
+    public static void printAll(Collection<Movie> movies){
+        movies.forEach((movie) -> {
+            System.out.println(movie);
+        });
     }
 
     public static void main(String[] args){
@@ -38,7 +40,11 @@ public class Main{
 
         Character character1 = new Character("Skywalker","Anakin");
 
-        Movie[] movies = {movie1,movie2,movie3};
+        Collection<Movie> movies = new ArrayList<Movie>();
+
+        movies.add(movie1);
+        movies.add(movie2);
+        movies.add(movie3);
         printAll(movies);
     }
 }
