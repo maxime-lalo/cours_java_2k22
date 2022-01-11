@@ -11,9 +11,9 @@ public class Actor{
 	public Actor(){
 		this.lastName = "";
 		this.firstName = "";
-		this.characters = new ArrayList<Character>;
+		this.characters = new ArrayList<Character>();
 	}
-	
+
 	public Actor(String lastName, String firstName, Collection<Character> characters) {
 		this.lastName = lastName;
 		this.firstName = firstName;

@@ -2,6 +2,7 @@ package Classes;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Movie{
@@ -10,7 +11,7 @@ public class Movie{
 	private int episodeNumber;
 	private float cost;
 	private float recipe;
-	private Collection<Actor> actors;
+	private ArrayList<Actor> actors;
 
 	public Movie(){
 		this.title = "";
@@ -25,7 +26,7 @@ public class Movie{
 		this.recipe = recipe;
 	}
 
-	public Movie(String title, int year, int episodeNumber, float cost, float recipe, Collection<Actor> actors) {
+	public Movie(String title, int year, int episodeNumber, float cost, float recipe, ArrayList<Actor> actors) {
 		this.title = title;
 		this.year = year;
 		this.episodeNumber = episodeNumber;
@@ -74,11 +75,11 @@ public class Movie{
 		this.recipe = recipe;
 	}
 
-	public Collection<Actor> getActors() {
+	public ArrayList<Actor> getActors() {
 		return actors;
 	}
 
-	public void setActors(Collection<Actor> actors) {
+	public void setActors(ArrayList<Actor> actors) {
 		this.actors = actors;
 	}
 
@@ -101,6 +102,7 @@ public class Movie{
 	public boolean isBefore(int year){
 		return (this.year < year);
 	}
+
 	@Override
 	public String toString() {
 		return "Movie{" +
@@ -111,5 +113,9 @@ public class Movie{
 				", recipe=" + recipe +
 				", actors=" + actors +
 				'}';
+	}
+
+	public void sortActors(){
+		this.actors.sort(Comparator.comparing(Actor::getLastName));
 	}
 }
